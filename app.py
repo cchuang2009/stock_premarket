@@ -303,7 +303,7 @@ def render_ticker(ticker: str, params: dict):
 
     styled = (
         df_show.style
-        .applymap(lambda v: color_pnl(v) if isinstance(v, float) else "",
+        .map(lambda v: color_pnl(v) if isinstance(v, float) else "",
                   subset=["W1損益%", "綜合損益%", "盤前Gap%"])
         .format({
             "盤前價": "${:.2f}",
